@@ -1,22 +1,24 @@
 # 2ndKeyboardLinux
 Use 2nd keyboard as function keypad in Linux
 
+![img](https://github.com/neoedmund/2ndKeyboardLinux/blob/main/kb3.jpg?raw=true)
 
 This tool is used to customize an 2nd keyboard as function keypad in Linux xorg desktop. 
-But you still can make use on a single keyboard.
+But you still can make it used on a single keyboard.
 
-first things first , you can download it to try if it works on your system. edit the config file to fix for your needs.
+First things first , you can download and try, to see if it works on your system. 
+Also try to edit the config file to fit your needs.
 
-currently the source is not released yet, if you feel like it, make a star. 
+Currently the source is not released yet, if you feel like it, make a star★. 
 if the project gathered a lot of starts, I will release the source .
 
 ## Steps:
 1. plug 2 keyboards of course 
 
-1.1 clone this repo by git clone "https://github.com/neoedmund/2ndKeyboardLinux"
+1.1 clone this repo by `git clone "https://github.com/neoedmund/2ndKeyboardLinux"`
 
-2. xinput to find out the device name of the keyboard 
-
+2. `xinput` to find out the device name of the keyboard 
+```
   xinput
 
 ⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
@@ -33,17 +35,19 @@ if the project gathered a lot of starts, I will release the source .
     ↳ USB KEYBOARD USB KEYBOARD Consumer Control	id=14	[slave  keyboard (3)]
     ↳ Eee PC WMI hotkeys                      	id=15	[slave  keyboard (3)]
     ↳ USB KEYBOARD USB KEYBOARD               	id=12	[slave  keyboard (3)]
+```
 
-2.1  use xinput --disable 12 (for instance "USB KEYBOARD USB KEYBOARD") to disable the 2nd keyboard as the X input source 
+2.1  use `xinput --disable 12` (for instance "USB KEYBOARD USB KEYBOARD") to disable the 2nd keyboard, so keystrokes on it will not received by X
 
-3. edit the config file evtest3.conf and copy to your home directory by cp evtest3.conf ~/
 
-4. it runs need JDK, so install JDK into /opt or using package manager of your disto like apt install default-jdk
+3. edit the config file `evtest3.conf` and copy to your home directory by `cp evtest3.conf ~/`
 
-5. run the program evtest3.exe  don't confused by its file extension , it's for Linux.
+4. it runs need JDK, so install JDK into /opt or using package manager of your disto like `apt install default-jdk`
+
+5. run the program `./evtest3.exe`  don't confused by its file extension , it's for Linux.
 
 ## the config file
-
+```
 {
 	mapping : {
 		"AT Translated Set 2 keyboard" : [
@@ -57,17 +61,25 @@ if the project gathered a lot of starts, I will release the source .
 
 			[ [ 59 ] [ exec [ neoeedit ] ] ] /*F1*/
 			[ [ 60 ] [ exec [ jfe ] ] ] /*F2*/
-			[ [ 61 ] [ exec [ firefox ] ] ] /*F2*/
+			[ [ 61 ] [ exec [ firefox ] ] ] /*F3*/
 			[ [ 99 ] [ exec [ nb -run jscreenshot -main neoe.tools.Screenshot ] ] ] /*Print Screen*/
 		]
 	}
 }
+```
 
 it is quite self explanatory .
-for the key codes, you can run evtest3 first and press the keystroke and see the code printed out on the console 
-it support 2 commands keys for simulate keystroke and exec to execute command line commands with args.
+for the key codes, you can run `evtest3.exe` first and press the keystroke and see the code printed out on the console .
 
-## troubleshoot 
-if evtest3 not reading the /dev/input/event* it maybe because of permissions . you can try run with sudo evtest3
+it support 2 commands: 
+
+`keys` for simulate keystroke and
+
+`exec` to execute command line with args.
+
+## troubleshooting 
+if `evtest3.exe` not reading the `/dev/input/event*` it maybe because of permissions . you can try run with `sudo ./evtest3.exe`
+
+Last, feel free to ask question or bug reports in the issue section!
 
 
