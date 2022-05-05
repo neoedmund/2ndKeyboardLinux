@@ -61,7 +61,7 @@ if the project gathered a lot of starts, I will release the source .
 
 			[ [ 59 ] [ exec [ neoeedit ] ] ] /*F1*/
 			[ [ 60 ] [ exec [ jfe ] ] ] /*F2*/
-			[ [ 61 ] [ exec [ firefox ] ] ] /*F2*/
+			[ [ 61 ] [ exec [ firefox ] ] ] /*F3*/
 			[ [ 99 ] [ exec [ nb -run jscreenshot -main neoe.tools.Screenshot ] ] ] /*Print Screen*/
 		]
 	}
@@ -80,6 +80,6 @@ it support 2 commands:
 ## troubleshooting 
 if `evtest3.exe` not reading the `/dev/input/event*` it maybe because of permissions . you can try run with `sudo ./evtest3.exe`
 
-Last, feel free to ask question or bug reports in the issue setion!
+Last, feel free to ask question or bug reports in the issue section!
 
 
