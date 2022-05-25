@@ -1,6 +1,8 @@
 # 2ndKeyboardLinux
 Use 2nd keyboard as function keypad in Linux
 
+A multi-keyboards aware X hotkey daemon 
+
 ![img](https://github.com/neoedmund/2ndKeyboardLinux/blob/main/kb3.jpg?raw=true)
 
 This tool is used to customize an 2nd keyboard as function keypad in Linux xorg desktop. 
